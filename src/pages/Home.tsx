@@ -2,8 +2,10 @@ import React from 'react'
 
 function Home() {
   return (
-    <div>Home</div>
-  )
+    <div>
+      <h1>Welcome to SolveIt</h1>
+    </div>
+    );
 }
 
 export default Home
