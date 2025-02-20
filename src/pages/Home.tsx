@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 function Home() {
   return (
-    <div>
-      <h1>Welcome to SolveIt</h1>
+    <div className="flex justify-center items-center h-screen">
+      <h1 className="text-4xl">Welcome to SolveIt</h1>
     </div>
-    );
+  );
 }
 
-export default Home
+export default Home;
