@@ -19,21 +19,25 @@ function SignIn() {
   };
 
   return (
-    <div>
-      <h2>Sign In</h2>
+    <div className="flex justify-center items-center h-screen">
+    <div className="bg-white p-8 rounded shadow-md w-96">
+      <h2 className="text-2xl mb-4">Sign In</h2>
       <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleSignIn}>Sign In</button>
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full p-2 mb-4 border rounded"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="w-full p-2 mb-4 border rounded"
+        />
+        <button onClick={handleSignIn} className="w-full bg-blue-600 text-white p-2 rounded">Sign In</button>
+      </div>
     </div>
   );
 }
