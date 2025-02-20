@@ -1,7 +1,7 @@
-import React, { useState }  from 'react'
+import { useState }  from 'react'
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice';
+import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice.ts';
 
 function SignIn() {
   const [email, setEmail] = useState('');
@@ -13,8 +13,12 @@ function SignIn() {
     try {
       const response = await axios.post('/api/userService/auth/signin', { email, password });
       dispatch(signInSuccess(response.data));
-    } catch (error) {
-      dispatch(signInFailure(error.response.data.message));
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error) && error.response) {
+        dispatch(signInFailure(error.response.data.message));
+      } else {
+        dispatch(signInFailure('An unknown error occurred'));
+      }
     }
   };
 
