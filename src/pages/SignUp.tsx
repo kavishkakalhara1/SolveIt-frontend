@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 function SignUp() {
@@ -19,8 +19,11 @@ function SignUp() {
       });
       alert('Signup successful');
     } catch (error) {
+      if (axios.isAxiosError(error) && error.response) {
       alert('Signup failed: ' + error.response.data.message);
-    }
+    } else {
+      alert('Signup failed: An unknown error occurred');
+    }}
   };
 
   return (
