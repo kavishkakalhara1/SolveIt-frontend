@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "../pages/Home";
 import SignIn from "../pages/SignIn";
 import SignUp from "../pages/SignUp";
+import TicketForm from '../components/TicketForm';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -12,6 +13,7 @@ function AnimatedRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/create-ticket" element={<TicketForm />} />
       </Routes>
     </AnimatePresence>
   );
